@@ -5,7 +5,6 @@ import List from "./List/List";
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import ListItem from './ListItem/ListItem';
 import Card from './Card/Card';
-import Product from './Model/Product';
 
 function App() {
 
@@ -18,15 +17,13 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="App">
       <Card counter={counter} totalPrice={totalPrice} />
       <Router>
-        <div className="App">
-          <Routes>
-            <Route path="/" element={<List addToCard={addToCard} />}></Route>
-            <Route path="/details" element={<ListItem addToCard={addToCard} />}></Route>
-          </Routes>
-        </div> 
+        <Routes>
+          <Route path="/" element={<List addToCard={addToCard} />}></Route>
+          <Route path="/details" element={<ListItem addToCard={addToCard} />}></Route>
+        </Routes>
       </Router>   
     </div>
   );
